@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import * as CryptoJS from 'crypto-js';
 import { Observable } from 'rxjs';
 import {switchMap,map } from 'rxjs/operators';
 
   export interface User {
-    userID: string;
+    uid: string;
     email: string;
   }
    
@@ -23,14 +23,14 @@ import {switchMap,map } from 'rxjs/operators';
   @Injectable({
     providedIn: 'root'
   })
-  export class firebaseservice {
+  export class FirebaseService {
     currentUser: User = null;
     msgDesEncryp:string;
    
     constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
       this.afAuth.onAuthStateChanged((user) => {
         console.log('Cambio: ', user)
-        this.currentUser = user;      
+        this.currentUser = user;
       });
     }
    
@@ -41,33 +41,34 @@ import {switchMap,map } from 'rxjs/operators';
       );
    
       console.log('resultado: ', credential)
-      const userID = credential.user.userID;
-      
+      const uid = credential.user.uid;
+   
       return this.afs.doc(
-        `users/${userID}`
+        
+        `users/${uid}`
       ).set({
-        userID,
+        uid,
         email: credential.user.email,
       });
     }
-
+   
     logIn({ email, password }) {
       return this.afAuth.signInWithEmailAndPassword(email, password);
     }
-
+   
     logOut(): Promise<void> {
       return this.afAuth.signOut();
     }
-
-    addMessage(msg){
+   
+    addChatMessage(msg){
       return this.afs.collection('messages').add({
         msg,
-        from: this.currentUser.userID,
+        from: this.currentUser.uid,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
       })
     }
   
-    getMessages(){
+    getChatMessages(){
       let users =[];
   
       return this.getUsers().pipe(
@@ -80,8 +81,9 @@ import {switchMap,map } from 'rxjs/operators';
           for (let m of messages){
             this.msgDesEncryp = CryptoJS.AES.decrypt(m.msg, "EstaEsUnaClave").toString(CryptoJS.enc.Utf8);
             m.msg = this.msgDesEncryp;
+            //
             m.fromName = this.getUserForMsg(m.from, users);
-            m.myMsg = this.currentUser.userID === m.from;
+            m.myMsg = this.currentUser.uid === m.from;
           }
           console.log('todos los mensajes: ', messages)
   
@@ -89,13 +91,14 @@ import {switchMap,map } from 'rxjs/operators';
         })
       )
     }
+
     getUsers(){
-      return this.afs.collection('users').valueChanges({idField: 'userID'}) as Observable<User[]>
+      return this.afs.collection('users').valueChanges({idField: 'uid'}) as Observable<User[]>
     }
   
     getUserForMsg(msgFromId, users: User[]): string{
       for(let usr of users){
-        if (usr.userID == msgFromId){
+        if (usr.uid == msgFromId){
           return usr.email;
         }
       }
