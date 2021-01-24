@@ -1,0 +1,7 @@
+{
+  "name": "examenb1chat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
