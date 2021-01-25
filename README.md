@@ -53,6 +53,7 @@ ionic generate page chat
 
 ## Link de video explicativo en TouTube
 
+https://youtu.be/dF3Ty5xjgQ0
 
 ## Creacion de la APK
 
