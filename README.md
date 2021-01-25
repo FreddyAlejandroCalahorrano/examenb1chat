@@ -4,36 +4,23 @@
 
 ### Freddy Calahorrano 
 
-# Resumen
+## Resumen
 
-Esta aplicación fue desarollada utilizando las Herramientas de FIREBASE,ANGULAR, CORDOVA y el IDE Visual estudio code, esta aplicación nos permite realizar un chat grupal entre usuarios los cuales deben 
-registrarse a travez de la paguína de login, tambien tienen la opcion de iniciar seción.
-
-
-## Comenzando 
-
-Para obtener el código fuente de este proyecto, simplemente diríjase a **Code** -> **Download ZIP**,
-descargue el comprimido del mismo, o clone el proyecto mediante Git.
+Esta aplicación nos permite realizar un chat grupal entre usuarios los cuales para poder chatear deben gistrarse a travez de la paguína de login, donde tambien tienen la opcion de iniciar seción.
 
 
-### Pre-requisitos 
+##  Herramientas
 
-_¿Que necesita el proyecto?_
+Las herramientas utilizadas para el desarollo de esta aplicación son las sigueintes:
 
-```
-Ionic CLI                     : 5.4.16 
-Ionic Framework               : @ionic/angular 5.5.1
-@angular-devkit/build-angular : 0.1000.8
-@angular-devkit/schematics    : 10.0.8
-@angular/cli                  : 10.0.8
-@ionic/angular-toolkit        : 2.3.3
-```
-```
-NodeJS 		: v14.15.1 
-npm    		: 6.14.9
-```
+-Node JS
+-IONIC
+-Cordova
+-Angular
+-Firebase
+-Visual Estudio Code
 
-### Instalación 🔧
+##Desarrollo
 
 _Para poder poner en marcha el proyecto, utilizar el comando npm install en la raíz_
 _Comando npm en la raíz del proyecto_
