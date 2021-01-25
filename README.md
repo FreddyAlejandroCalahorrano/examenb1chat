@@ -22,19 +22,34 @@ Las herramientas utilizadas para el desarollo de esta aplicación son las siguei
 
 ## Desarrollo
 
-_Para poder poner en marcha el proyecto, utilizar el comando npm install en la raíz_
-_Comando npm en la raíz del proyecto_
+Primero debemos crear el proyecto con las herramientas iniciales a utilizar, esto lo aremos ubicandonos en la carpeta donde estará guardado nuestro Proyecto y ejecutando una Terminal donde agregaremos los siguientes comandos.
 
 ```
-\ExamenTEBimestre1CGuamba>npm install
+ionic start "Nombre del proyecto" --cordova --angular
 ```
 
-Y luego, ejecutar el servidor de pruebas con Ionic
-
+Instalaremos las librerias de firebase
 ```
-\Chat-App-Ionic-master>ionic serve -l
+npm install firebase
 ```
-_La opción -l va a instalar Ionic-Lab, por lo que se deberá confirmar la instalación del mismo_
+```
+npm i @angular/fire
+```
+Instalaremos las librerias de chat
+```
+npm i chat-service
+```
+Instalaremos las librerias necesarias para la encryptacion de los datos
+```
+npm i crypto-js
+```
+Luego crearemos las páginas de Login y Chat
+```
+ionic generate page login
+```
+```
+ionic generate page chat
+```
 
 ## Explicacion del código 
 
