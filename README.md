@@ -1,8 +1,8 @@
-# Examen BQ
+# Examen B1
 
 ## Autor
 
-** Freddy Calahorrano **
+### Freddy Calahorrano 
 
 # Resumen
 
