@@ -80,8 +80,7 @@ import {switchMap,map } from 'rxjs/operators';
         map(messages => {
           for (let m of messages){
             this.msgDesEncryp = CryptoJS.AES.decrypt(m.msg, "EstaEsUnaClave").toString(CryptoJS.enc.Utf8);
-            m.msg = this.msgDesEncryp;
-            //
+            m.msg = this.msgDesEncryp,
             m.fromName = this.getUserForMsg(m.from, users);
             m.myMsg = this.currentUser.uid === m.from;
           }

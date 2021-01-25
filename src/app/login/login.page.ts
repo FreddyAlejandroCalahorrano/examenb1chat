@@ -68,9 +68,9 @@ export class LoginPage implements OnInit {
     }, async (err) =>{
       loading.dismiss();
       const alert = await this.alertController.create({
-        header: 'Error',
-        message: err.message,
-        buttons: ['OK'],
+        header: 'Contraseña Incorrecta',
+        message: 'Por favor revise su contraseña e intente de nuevo.',
+        buttons: ['Aceptar'],
       });
 
       await alert.present();

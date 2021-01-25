@@ -1,0 +1,26 @@
+.ion-content {
+    background: var(--ion-color-contrast);
+}
+.out-message {
+    background: var(--ion-color-favorite);
+    color: black;
+}
+ 
+.in-message {
+    background: var(--ion-color-favorite-shade);
+    color: black;
+}
+.message {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+    white-space: pre-wrap;
+}
+.time{
+    color: gray;
+    float: right;
+    font-size: small;
+}
+.header {
+    color:black;
+}
