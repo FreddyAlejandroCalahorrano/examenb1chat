@@ -13,12 +13,12 @@ Esta aplicación nos permite realizar un chat grupal entre usuarios los cuales p
 
 Las herramientas utilizadas para el desarollo de esta aplicación son las sigueintes:
 
-_-Node JS_
-_-IONIC_
-_-Cordova_
-_-Angular_
-_-Firebase_
-_-Visual Estudio Code_
+_*Node JS_
+_*IONIC_
+_*Cordova_
+_*Angular_
+_*Firebase_
+_*Visual Estudio Code_
 
 ## Desarrollo
 
