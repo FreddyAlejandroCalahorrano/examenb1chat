@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="favorite">
     <ion-title id="head">
       <title>Chat  Grupal</title>
     </ion-title>
@@ -10,7 +10,7 @@
 
   <form [formGroup]="validationsForm" >
     <ion-item>
-      <ion-label position="floating" color="primary">Correo</ion-label>
+      <ion-label position="floating" color="favorite">Correo</ion-label>
       <ion-input type="text" formControlName="email" autofocus = "true" clearInput="true"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -22,7 +22,7 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label position="floating" color="primary">Contraseña</ion-label>
+      <ion-label position="floating" color="favorite">Contraseña</ion-label>
       <ion-input type="password" formControlName="password" class="form-controll" clearInput="true"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -35,6 +35,6 @@
     </div>
 
   </form>
-  <ion-button (click)="signUp()" expand="full" >Registrarse</ion-button>
-  <ion-button (click)="logIn()" expand="full" >Iniciar Sesión</ion-button>
+  <ion-button color="favorite" (click)="signUp()" expand="full" >Registrarse</ion-button>
+  <ion-button color= "favorite" (click)="logIn()" expand="full" >Iniciar Sesión</ion-button>
 </ion-content>
